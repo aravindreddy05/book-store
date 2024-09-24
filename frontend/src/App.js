@@ -9,13 +9,14 @@ function App() {
         <p>
           Hi....How r u
         </p>
+        <p> Our Book Store is very consice</p>
         <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Welcome to Book Store
         </a>
       </header>
     </div>
