@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Use Routes instead of Switch
+import LoginPage from './components/LoginPage';
+import HomePage from './components/HomePage';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hi....Harshi
-        </p>
-        <p> Our Book Store is very consice</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Welcome to Book Store
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<LoginPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

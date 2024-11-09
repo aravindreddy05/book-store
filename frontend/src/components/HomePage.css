@@ -1,0 +1,27 @@
+.home-page {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .book-item {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 4px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-item h2 {
+    margin-top: 0;
+  }
+  
+  .book-item p {
+    margin: 0.5rem 0;
+  }
+  
