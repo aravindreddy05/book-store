@@ -1,27 +1,69 @@
+/* General styling for the homepage */
 .home-page {
-    padding: 2rem;
-    font-family: Arial, sans-serif;
-  }
-  
-  .book-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .book-item {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 4px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .book-item h2 {
-    margin-top: 0;
-  }
-  
-  .book-item p {
-    margin: 0.5rem 0;
-  }
-  
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f7f3e9; /* Light beige background */
+  color: #4e342e; /* Dark brown text color */
+  background-image: url('/Users/csuftitan/Desktop/book-store/frontend/src/homepg.jpeg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(4px);
+}
+
+/* Flex container for the book list */
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* Increased gap for better spacing */
+  justify-content: center; /* Center items on the page */
+}
+
+/* Individual book item styling */
+.book-item {
+  border: 1px solid #d7ccc8; /* Light brown border */
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 280px; /* Slightly smaller width for a compact layout */
+  background: linear-gradient(135deg, #d7ccc8, #f3e5ab); /* Gradient from light brown to tan */
+  box-shadow: 0 6px 12px rgba(78, 52, 46, 0.1); /* Soft brown shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover effect for book items */
+.book-item:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 8px 16px rgba(78, 52, 46, 0.2); /* Stronger shadow on hover */
+  background: linear-gradient(135deg, #f3e5ab, #d7ccc8); /* Reverse gradient on hover */
+}
+
+/* Heading for each book item */
+.book-item h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #5d4037; /* Medium brown */
+}
+
+/* Paragraph text for each book item */
+.book-item p {
+  margin: 0.75rem 0;
+  color: #6d4c41; /* Softer brown text */
+  line-height: 1.5;
+}
+
+/* Button styling within book items */
+.book-item button {
+  background-color: #8d6e63; /* Rich brown button */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+.book-item button:hover {
+  background-color: #5d4037; /* Darker brown on hover */
+}

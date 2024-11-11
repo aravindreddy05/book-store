@@ -7,6 +7,7 @@ function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate(); // Updated hook for navigation
 
   const handleSubmit = async (e) => {
@@ -34,6 +35,10 @@ function LoginPage() {
     }
   };
 
+  const handleRegisterRedirect = () => {
+    navigate('/register'); // Navigate to the Register page
+  };
+
   return (
     <div className="login-page">
       <div className="login-container">
@@ -52,16 +57,29 @@ function LoginPage() {
           <div className="form-group">
             <label htmlFor="password">Password:</label>
             <input
-              type="password"
+              type={showPassword ? 'text' : 'password'} 
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <label className="show-password">
+              <input
+                type="checkbox"
+                checked={showPassword}
+                onChange={() => setShowPassword(!showPassword)}
+              />
+              Show Password
+            </label>
           </div>
           <button type="submit" className="submit-button">Login</button>
         </form>
         {message && <p>{message}</p>}
+        <div className="register-option">
+          <p>Don't have an account? 
+            <button className="register-link" onClick={handleRegisterRedirect}>Register</button>
+          </p>
+        </div>
       </div>
     </div>
   );

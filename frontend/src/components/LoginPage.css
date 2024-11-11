@@ -1,63 +1,135 @@
+/* Page Container */
 .login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    background-image: url('/Users/csuftitan/Downloads/Homepage.webp'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .login-container {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  input[type="text"]:focus,
-  input[type="password"]:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  .submit-button {
-    padding: 0.5rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    width: 100%;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  background-image: url('/Users/csuftitan/Desktop/book-store/frontend/src/login.jpeg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(4px); /* Adds a soft blur to the background image */
+}
+
+/* Login Container */
+.login-container {
+  background-color: rgba(245, 224, 196, 0.85); /* Semi-transparent background */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+h1 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #e98a2c;
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(233, 138, 44, 0.2);
+}
+
+/* Password Toggle */
+.show-password {
+  font-size: 0.85rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.show-password input[type="checkbox"] {
+  margin-right: 0.4rem;
+}
+
+/* Submit Button */
+.submit-button {
+  padding: 0.75rem;
+  background-color: #e98a2c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #784107;
+  transform: scale(1.02);
+}
+
+.submit-button:active {
+  transform: scale(0.98);
+}
+
+/* Message Text */
+p {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #e98a2c;
+}
+
+/* Register Option (Don't have an account?) */
+.register-option {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.register-option p {
+  margin: 0;
+}
+
+.register-link {
+  color: #e98a2c;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.register-link:hover {
+  color: #c56b0b;
+}
