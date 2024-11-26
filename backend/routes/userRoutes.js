@@ -7,6 +7,6 @@ const bookController = require('../controller/bookController');
 // Login route
 router.post('/login', userController.loginUser);
 router.get('/getBooks', bookController.getAllBooks);
-//router.post('/register', userController.registerUser);
+router.post('/register', userController.registerUser);
 
 module.exports = router;

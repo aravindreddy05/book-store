@@ -35,7 +35,7 @@ const userController = {
     });
   },
    
-/*registerUser: (req, res) => {
+registerUser: (req, res) => {
   const { name, email, password } = req.body;
 
   if (!name || !email || !password) {
@@ -57,7 +57,7 @@ const userController = {
 
         // Insert the new user into the database
         const query = 'INSERT INTO `USER` (Name, Email, Password) VALUES (?, ?, ?)';
-        db.query(query, [name, email, hashedPassword], (err, results) => {
+        db.query(query, [name, email, password], (err, results) => {
           if (err) {
             console.error('Error inserting user into database:', err.message);
             return res.status(500).send('Error during registration.');
@@ -67,7 +67,7 @@ const userController = {
         });
       });
     }
-  };*/
-};
+  }
+
 
 module.exports = userController;
