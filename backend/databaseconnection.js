@@ -1,4 +1,4 @@
-/*const mysql = require('mysql2');
+const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
   host: 'mysql-2a908363-aravindreddy2001-0c67.e.aivencloud.com',
@@ -21,4 +21,4 @@ connection.connect((err) => {
 
 // connection.end();
 
-module.exports = connection;*/
+module.exports = connection;
