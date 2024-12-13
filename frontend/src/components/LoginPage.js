@@ -21,8 +21,15 @@ function LoginPage() {
       });
 
       if (response.status === 200) {
-        setMessage('Login successful!');
-        navigate('/home'); // Redirect to HomePage on success
+        const user = response.data; // Extract the user object from the response
+
+        if (user.Role !== 1) { // Check if user exists and their Role
+          setMessage('Login successful!');
+          navigate('/admin'); // Redirect to admin if role is 1
+        } else {
+          setMessage('Login successful!');
+          navigate('/home'); // Redirect to HomePage for other roles
+        }
       } else {
         setMessage('Login failed!');
       }
@@ -37,6 +44,10 @@ function LoginPage() {
 
   const handleRegisterRedirect = () => {
     navigate('/register'); // Navigate to the Register page
+  };
+
+  const handleAdminRedirect = () => {
+    navigate('/admin'); // Navigate to the Admin page for testing
   };
 
   return (
@@ -79,6 +90,9 @@ function LoginPage() {
           <p>Don't have an account? 
             <button className="register-link" onClick={handleRegisterRedirect}>Register</button>
           </p>
+        </div>
+        <div className="admin-test">
+          <button className="test-admin-button" onClick={handleAdminRedirect}>Go to Admin Page</button>
         </div>
       </div>
     </div>

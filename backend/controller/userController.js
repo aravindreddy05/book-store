@@ -27,7 +27,7 @@ const userController = {
       if (password === user.Password) {
         res.status(200).json({
           message: 'Login successful!',
-          user: { id: user.User_ID, name: user.Name, email: user.Email }
+          user: { id: user.User_ID, name: user.Name, email: user.Email,Role:user.Role }
         });
       } else {
         res.status(401).send('Invalid email or password.');

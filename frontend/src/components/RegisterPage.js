@@ -29,7 +29,7 @@ function RegisterPage() {
 
       if (response.status === 201) { // Assuming 201 for successful creation
         setMessage('Registration successful!');
-        navigate('/login'); // Redirect to login page after registration
+        navigate('/home'); // Redirect to login page after registration
       } else {
         setMessage('Registration failed!');
       }
