@@ -11,7 +11,7 @@ function OrderDetails({ userId }) {
     // Fetch order details for the user
     const fetchOrderDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3010/api/getOrderDetails/${userId}`); // Adjust URL as needed
+        const response = await axios.get(`http://localhost:3010/purchaseRoutes/orders/${userId}`); // Adjust URL as needed
         setOrders(response.data);
         setLoading(false);
       } catch (err) {

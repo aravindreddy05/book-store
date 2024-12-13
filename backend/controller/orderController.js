@@ -1,7 +1,8 @@
-const db=require('../databaseconnection')
+const db = require('../databaseconnection');  // Use your regular mysql2 connection
+
 exports.getOrderDetails = async (req, res) => {
-    const userId = req.params.userId;  
-    
+    const userId = req.params.userId;
+
     try {
         const query = `
             SELECT 
@@ -17,22 +18,32 @@ exports.getOrderDetails = async (req, res) => {
             FROM 
                 \`Order\` o
             JOIN 
-                Order_Detail od
+                ORDER_DETAIL od
                 ON o.Order_ID = od.Order_ID
             WHERE 
                 o.User_ID = ?
             ORDER BY 
                 o.Order_ID;
         `;
-        
-        const [rows] = await db.query(query, [userId]); 
-        
+
+        // Manually wrap the db.query() callback in a Promise
+        const rows = await new Promise((resolve, reject) => {
+            db.query(query, [userId], (err, results) => {
+                if (err) {
+                    reject(err);  // Reject the promise if there's an error
+                } else {
+                    resolve(results);  // Resolve the promise with the results
+                }
+            });
+        });
+
+        // Check if there are results
         if (rows.length > 0) {
-            res.status(200).json(rows);  
+            res.status(200).json(rows);
         } else {
             res.status(404).json({ message: 'No orders found for this user' });
         }
-        
+
     } catch (error) {
         res.status(500).json({ message: 'Error fetching order details', error });
     }

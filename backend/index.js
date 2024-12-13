@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes'); 
 const adminRoutes=require('./routes/adminRoutes');
-
+const purchaseRoutes=require('./routes/purchaseRoutes')
+const getBookDetails=require('./routes/bookDetails')
 
 const app = express();
 const port = 3010;
@@ -16,7 +17,8 @@ app.get('/', (req, res) => {
 
 
 app.use('/api', userRoutes);
-app.use('/admin',adminRoutes)
+app.use('/admin',adminRoutes);
+app.use('/purchaseRoutes',purchaseRoutes);
 
 
 // Start the server
