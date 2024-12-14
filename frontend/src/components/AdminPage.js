@@ -198,20 +198,21 @@ const AdminBookManagement = () => {
       </form>
       {message && <p className="success-message">{message}</p>}
       {error && <p className="error-message">{error}</p>}
+      <h2>All Books</h2>
       <div className="book-list">
-        <h2>All Books</h2>
+        
         {books.length > 0 ? (
           books.map((book) => (
             <div key={book.Book_ID} className="book-item">
               <h3>{book.Title}</h3>
+              {book.image_url && <img src={book.image_url} alt={book.Title} />}
               <p><strong>Author:</strong> {book.Author}</p>
               <p><strong>Category:</strong> {book.Category}</p>
               <p><strong>Quantity:</strong> {book.Quantity}</p>
               <p><strong>Price:</strong> ${book.Price}</p>
               <p><strong>Description:</strong> {book.Description}</p>
-              <p><strong>Image URL:</strong> {book.image_url}</p>
-              <button onClick={() => handleEdit(book)} className="edit-button">Edit</button>
-              <button onClick={() => handleDelete(book.Book_ID)} className="delete-button">Delete</button>
+             
+             
             </div>
           ))
         ) : (
