@@ -3,10 +3,10 @@ const db = require('../databaseconnection'); // Assuming you have a database con
 
 // Insert a new book
 exports.createBook = async (req, res) => {
-    const { Title, Author, Category, Quantity, Price, Description } = req.body;
+    const { Title, Author, Category, Quantity, Price, Description,Image_Url } = req.body;
     try {
         const [result] = await db.query(
-            'INSERT INTO Books (Title, Author, Category, Quantity, Price, Description) VALUES (?, ?, ?, ?, ?, ?)',
+            'INSERT INTO Books (Title, Author, Category, Quantity, Price, Description,image_url) VALUES (?, ?, ?, ?, ?, ?,?)',
             [Title, Author, Category, Quantity, Price, Description]
         );
         res.status(201).json({ message: 'Book created successfully', bookId: result.insertId });
