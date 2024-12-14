@@ -2,9 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes'); 
 const adminRoutes=require('./routes/adminRoutes');
-// const purchaseRoutes=require('./routes/purchaseRoutes')
 const purchaseRoutes=require('./routes/purchaseRoutes');
-const bookRoutes=require('./routes/bookRoutes')
+
 
 const app = express();
 const port = 3010;
@@ -20,7 +19,7 @@ app.get('/', (req, res) => {
 app.use('/api', userRoutes);
 app.use('/admin',adminRoutes);
 app.use('/purchase',purchaseRoutes);
-app.use('/book',bookRoutes)
+
 
 
 
