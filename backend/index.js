@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes'); 
 const adminRoutes=require('./routes/adminRoutes');
-// const purchaseRoutes=require('./routes/purchaseRoutes')
 const purchaseRoutes=require('./routes/purchaseRoutes');
+
 
 const app = express();
 const port = 3010;

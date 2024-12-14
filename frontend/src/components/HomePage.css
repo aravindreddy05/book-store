@@ -17,6 +17,20 @@
   text-align: center;
 }
 
+.search-filters {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d7ccc8;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 200px; /* You can adjust the width */
+}
+
 .book-item img {
   width: 100%; /* Make image fill the container width */
   height: 200px; /* Set a fixed height for the images */

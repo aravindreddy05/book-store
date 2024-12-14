@@ -6,7 +6,7 @@ const adminController = require('../controller/adminController');
 // Routes for /admin/books
 
 // Create a new book (Insert)
-router.post('/books', adminController.createBook);
+router.post('/createBook', adminController.createBook);
 
 // Read all books
 router.get('/books', adminController.getAllBooks);
