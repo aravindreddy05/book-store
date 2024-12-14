@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Us
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import HomePage from './components/HomePage';
-
+import AdminPage from './components/AdminPage';
 import OrderDetails from './components/OrderDetails';
 import BookDetail from './components/BookDetail';
 
@@ -18,6 +18,7 @@ function App() {
         <Route path="/BookDetail/:Book_ID" element={<BookDetail />} /> {/* Add BookDetail route */}
         <Route path="/" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/admin" element={<AdminPage />} />
      
           
           <Route path="/Orderdetails" element={<OrderDetails />} /> 

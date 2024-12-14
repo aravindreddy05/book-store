@@ -16,5 +16,6 @@ router.put('/books/:id', adminController.updateBook);
 
 // Delete a book
 router.delete('/books/:id', adminController.deleteBook);
+//router.post('/login', adminController.loginAdmin);
 
 module.exports = router;

@@ -1,126 +1,168 @@
 /* BookDetail.css */
 .book-detail {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    padding: 30px;
-    max-width: 800px; /* Adjust the max-width for a smaller layout */
-    margin: 0 auto;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: rgba(233, 138, 44, 0.5);
-    box-shadow: 0 0 8px rgba(233, 138, 44, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .book-detail h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #333;
-    text-align: center;
-  }
-  
-  .book-detail p {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    color: #555;
-    text-align: center;
-  }
-  
-  /* Center the image in the page and make it smaller */
-  .book-detail .book-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Ensure the container takes full width */
-    max-width: 200px; /* Set a smaller max-width for the image */
-    height: 200px; /* Set a smaller height for the image */
-    margin-bottom: 20px; /* Add some space below the image */
-  }
-  
-  .book-detail img {
-    object-fit: contain; /* Ensure image scales properly without distortion */
-    width: 100%; /* Image fills container width */
-    height: 100%; /* Image fills container height */
-    border-radius: 8px; /* Optionally, add rounded corners */
-    max-width: 300px; /* Set a max width for the image */
-  height: 400px; /* Fixed height */
-  margin-bottom: 20px; 
-  }
-  
-  /* Purchase button styles */
-  .purchase-button {
-    background-color: #71410b; /* Similar to GoodReads button color */
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-  }
-  
-  .purchase-button:hover {
-    background-color: #e55d51;
-  }
-  
-  /* Popup styles */
-  .popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  
-  .popup-content {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 30px;
-    width: 400px;
-    text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .popup-content p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .popup-button {
-    background-color: #ff6f61;
-    color: white;
-    font-size: 1.1rem;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: background-color 0.3s;
-  }
-  
-  .popup-button:hover {
-    background-color: #e55d51;
-  }
-  
-  .popup-button:focus {
-    outline: none;
-  }
-  
-  .popup .popup-button:last-child {
-    background-color: #888;
-  }
-  
-  .popup .popup-button:last-child:hover {
-    background-color: #666;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  padding: 30px;
+  max-width: 800px; /* Adjust the max-width for a smaller layout */
+  margin: 0 auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: rgba(233, 138, 44, 0.5);
+  box-shadow: 0 0 8px rgba(233, 138, 44, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Added transition */
+}
+
+.book-detail:hover {
+  transform: translateY(-5px); /* Lift effect like homepage */
+  box-shadow: 0 8px 16px rgba(233, 138, 44, 0.3); /* Stronger shadow on hover */
+  background: linear-gradient(135deg, #f5b540, #e58e2c); /* Reversed gradient on hover */
+}
+
+/* Heading style */
+.book-detail h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+.book-detail:hover h1 {
+  color: #fffacd; /* Light yellow color on hover */
+}
+
+/* Paragraph style */
+.book-detail p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: #555;
+  text-align: center;
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+.book-detail:hover p {
+  color: #5d4037; /* Dark brown color on hover */
+}
+
+/* Image container and styles */
+.book-detail .book-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease; /* Add transition for image container */
+}
+
+.book-detail img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  max-width: 300px;
+  height: 400px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Add transition for image transform */
+}
+
+.book-detail:hover .book-image-container {
+  transform: scale(1.05); /* Slightly scale image container on hover */
+}
+
+.book-detail:hover img {
+  transform: rotate(5deg); /* Add slight rotation effect to image on hover */
+  filter: brightness(1.2); /* Slight brightness increase */
+}
+
+/* Purchase button styling */
+.purchase-button {
+  background-color: #71410b; /* Similar to GoodReads button color */
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.purchase-button:hover {
+  background-color: #e55d51; /* Darker brown on hover */
+  background: linear-gradient(135deg, #71410b, #e55d51); /* Gradient background on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.purchase-button:focus {
+  outline: none;
+}
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popup-content:hover {
+  transform: translateY(-10px); /* Lift popup on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.popup-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.popup-button {
+  background-color: #ff6f61;
+  color: white;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.popup-button:hover {
+  background-color: #e55d51;
+  transform: scale(1.1); /* Slight scale on hover */
+}
+
+.popup-button:focus {
+  outline: none;
+}
+
+.popup .popup-button:last-child {
+  background-color: #888;
+}
+
+.popup .popup-button:last-child:hover {
+  background-color: #666;
+}

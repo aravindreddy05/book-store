@@ -1,67 +1,32 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Use useNavigate instead of useHistory
+import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
-import axios from 'axios'; // Import axios for API requests
+import axios from 'axios';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [extraField1, setExtraField1] = useState('');
+  const [extraField2, setExtraField2] = useState('');
   const navigate = useNavigate(); // Updated hook for navigation
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage(''); // Clear any previous messages
-   /* try {
+    setMessage('');
+    try {
       const response = await axios.post('http://localhost:3010/api/login', {
-        email: username, // Assuming your backend expects an `email` field
+        email: username,
         password: password,
       });
-    
+
       if (response.status === 200) {
-        const user = response.data; // Extract the user object from the response
-    
-        if (user && user.Role === 1) {
-          // User exists and their Role is 1
+        const user = response.data;
+        if (user) {
           setMessage('Login successful!');
-          navigate('/admin'); // Redirect to admin
-        } else if (user) {
-          // User exists but their Role is not 1
-          setMessage('Login successful!');
-          navigate('/home'); // Redirect to HomePage
-        } else {
-          // User object is missing or undefined
-          setMessage('Login failed!');
+          navigate('/home'); // Redirect to home after successful login
         }
-      } else {
-        // Response status is not 200
-        setMessage('Login failed!');
-      }
-    } catch (error) {
-      if (error.response) {
-        // Server responded with an error
-        setMessage(error.response.data || 'Login failed!');
-      } else {
-        // Network or other non-server error
-        setMessage('An error occurred. Please try again.');
-      }
-    }
-    
-*/
-      try {
-      const response = await axios.post('http://localhost:3010/api/login', {
-        email: username, // Assuming your backend expects an `email` field
-        password: password,
-      });
-
-      if (response.status === 200) {
-        const user = response.data; // Extract the user object from the response
-
-        if (user ) { // Check if user exists and their Role
-          setMessage('Login successful!');
-          navigate('/home'); // Redirect to admin if role is 1
-        } 
       } else {
         setMessage('Login failed!');
       }
@@ -85,7 +50,7 @@ function LoginPage() {
   return (
     <div className="login-page">
       <div className="login-container">
-        <h1>Login</h1>
+        <h1>User Login</h1> {/* Updated heading */}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username:</label>
@@ -100,7 +65,7 @@ function LoginPage() {
           <div className="form-group">
             <label htmlFor="password">Password:</label>
             <input
-              type={showPassword ? 'text' : 'password'} 
+              type={showPassword ? 'text' : 'password'}
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -119,15 +84,52 @@ function LoginPage() {
         </form>
         {message && <p>{message}</p>}
         <div className="register-option">
-          <p>Don't have an account? 
-            <button className="register-link" onClick={handleRegisterRedirect}>Register</button>
+          <p>
+            Don't have an account?{' '}
+            <button className="register-link" onClick={handleRegisterRedirect}>
+              Register
+            </button>
           </p>
         </div>
+
+        {/* Added Admin Login heading */}
+        <div className="admin-login">
+          <h2>Admin Login</h2> {/* New Admin Login heading */}
+        </div>
+
+        <div className="extra-fields">
+          <div className="form-group horizontal-layout">
+            <label htmlFor="extraField1">Username:</label>
+            <input
+              type="text"
+              id="extraField1"
+              placeholder="Enter Username"
+              value={extraField1}
+              onChange={(e) => setExtraField1(e.target.value)}
+              className="extra-input"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="extraField2">Password:</label>
+            <input
+              type={showPassword ? 'text' : 'password'}
+              id="extraField2"
+              placeholder="Enter Password"
+              value={extraField2}
+              onChange={(e) => setExtraField2(e.target.value)}
+              className="extra-input"
+            />
+          </div>
+        </div>
+
         <div className="admin-test">
-          <button className="test-admin-button" onClick={handleAdminRedirect}>Go to Admin Page</button>
+          <button className="test-admin-button" onClick={handleAdminRedirect}>
+            Login
+          </button>
         </div>
       </div>
     </div>
   );
 }
+
 export default LoginPage;
