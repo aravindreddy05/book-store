@@ -4,13 +4,32 @@
   font-family: Arial, sans-serif;
   background-color: #f7f3e9; /* Light beige background */
   color: #4e342e; /* Dark brown text color */
-  /* background-image: url('/Users/csuftitan/Desktop/book-store/frontend/src/homepg.jpeg'); Replace with your image path */
+/*  background-image: url('/Users/csuftitan/Desktop/book-store/frontend/src/homepg.jpeg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column; /* Stack heading and book list */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  min-height: 100vh; /* Ensure it takes the full viewport height */
+  text-align: center;
 }
 
+.book-item img {
+  width: 100%; /* Make image fill the container width */
+  height: 200px; /* Set a fixed height for the images */
+  object-fit: contain; /* Ensure image fits within the container without cropping */
+  border-radius: 6px; /* Optional: Rounded corners for the image */
+  margin-bottom: 1rem; /* Add space between image and text */
+}
+.home-page h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fffacd; /* Light yellow */
+  margin: 0; /* Remove default margin */
+}
 /* Flex container for the book list */
 .book-list {
   display: flex;

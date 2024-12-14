@@ -17,6 +17,7 @@ function HomePage() {
         setBooks(response.data);
         setLoading(false);
       } catch (err) {
+        console.error(err)
         setError('Error fetching books data.');
         setLoading(false);
       }
@@ -33,14 +34,20 @@ function HomePage() {
     return <div className="home-page">{error}</div>;
   }
 
+  const handleBookClick = (Book_ID) => {
+    // Redirect to BookDetail page with the Book_ID
+    navigate(`/BookDetail/${Book_ID}`);
+  };
+
   return (
     <div className="home-page">
       <h1>Welcome to the Book Store</h1>
       <div className="book-list">
         {books.length > 0 ? (
           books.map((book) => (
-            <div key={book.Book_ID} className="book-item">
+            <div key={book.Book_ID} className="book-item" onClick={() => handleBookClick(book.Book_ID)}>
               <h2>{book.Title}</h2>
+              {book.image_url && <img src={book.image_url} alt={book.Title}  />}
               <p><strong>Author:</strong> {book.Author}</p>
               <p><strong>Category:</strong> {book.Category}</p>
               <p><strong>Quantity:</strong> {book.Quantity}</p>
